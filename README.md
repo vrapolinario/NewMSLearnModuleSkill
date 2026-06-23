@@ -34,6 +34,48 @@ Given a topic idea, GitHub Copilot will:
 7. **Validate and summarize** the draft with a `TODO:` checklist of items to
    verify before publishing.
 
+## Installing the skill
+
+A skill is a folder containing a `SKILL.md` file. Your GitHub Copilot client
+discovers skills under its skills directory — per user at
+`~/.copilot/skills/` (on Windows, `$HOME\.copilot\skills\`), or per
+workspace/repo if you include the folder in your repository.
+
+Pick one of the two options below. After installing, restart/reload your editor
+so the skill is discovered. It then activates automatically when you ask Copilot
+to create or draft a Microsoft Learn module.
+
+### Option 1 — Copy the folder
+
+Copy this skill folder directly into your Copilot skills directory:
+
+```powershell
+$dest = "$HOME\.copilot\skills\new-mslearn-module"
+New-Item -ItemType Directory -Force -Path (Split-Path $dest) | Out-Null
+Copy-Item -Recurse -Force -Path "C:\GitHub\NewMSLearnModuleSkill" -Destination $dest
+```
+
+Simple and self-contained, but you must re-copy to pick up updates.
+
+### Option 2 — Clone once, then symlink (stays up to date with `git pull`)
+
+Clone the repo to a generic location, then create a symbolic link from the
+Copilot skills directory to that clone. Updating later is just `git pull` — no
+re-copy needed.
+
+```powershell
+# 1. Clone once to a generic location (skip if you already have it locally)
+git clone https://github.com/<your-org-or-user>/NewMSLearnModuleSkill.git .\NewMSLearnModuleSkill
+
+# 2. Ensure the Copilot skills directory exists
+New-Item -ItemType Directory -Force -Path "$HOME\.copilot\skills" | Out-Null
+
+# 3. Symlink the cloned folder into the skills directory
+New-Item -ItemType SymbolicLink `
+  -Path "$HOME\.copilot\skills\new-mslearn-module" `
+  -Target "<location of your clone>\NewMSLearnModuleSkill"
+```
+
 ## Resulting module layout
 
 The skill generates modules in the `learn-pr` layout. Note that the **repo** is
@@ -54,20 +96,6 @@ learn-pr/<product>/<module-folder-name>/
 │   └── <n+1>-summary.md
 └── media/                        # Images, diagrams, video thumbnails
 ```
-
-## Installing the skill
-
-Skills are folders containing a `SKILL.md` file. Place this folder where your
-GitHub Copilot client discovers skills:
-
-- **Per user (all workspaces):** copy the folder into your Copilot skills
-  directory, for example `~/.copilot/skills/new-mslearn-module/`.
-- **Per workspace/repo:** include the folder in your repository so collaborators
-  share it.
-
-After placing it, restart/reload your editor so the skill is discovered. The
-skill activates automatically when you ask Copilot to create or draft a
-Microsoft Learn module.
 
 ## Using the skill
 
