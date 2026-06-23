@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.<module-folder-name>.<unit-slug>
+title: <Visible unit title>
+metadata:
+  title: <SEO unit page title>
+  description: <One to two sentence description of this unit.>
+  ms.date: <MM/DD/YYYY>
+  author: <author-github-alias>
+  ms.author: <author-microsoft-alias>
+  ms.topic: unit
+  ms.service: <product-or-service-slug>
+durationInMinutes: <integer>
+content: |
+  [!include[](includes/<n>-<unit-slug>.md)]

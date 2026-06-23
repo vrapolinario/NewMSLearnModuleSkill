@@ -1,0 +1,48 @@
+### YamlMime:ModuleUnit
+uid: learn.<module-folder-name>.knowledge-check
+title: Knowledge check
+metadata:
+  title: Knowledge check
+  description: <One sentence description of the knowledge check.>
+  ms.date: <MM/DD/YYYY>
+  author: <author-github-alias>
+  ms.author: <author-microsoft-alias>
+  ms.topic: unit
+  ms.service: <product-or-service-slug>
+durationInMinutes: 3
+quiz:
+  title: Check your knowledge
+  questions:
+    - content: "<Question 1: a scenario or concept check tied to an objective?>"
+      choices:
+        - content: "<Plausible but incorrect option>"
+          isCorrect: false
+          explanation: "<Why this is incorrect; address the misconception.>"
+        - content: "<Correct option>"
+          isCorrect: true
+          explanation: "<Why this is correct; reinforce the concept.>"
+        - content: "<Another plausible distractor>"
+          isCorrect: false
+          explanation: "<Why this doesn't fit.>"
+    - content: "<Question 2?>"
+      choices:
+        - content: "<Option A>"
+          isCorrect: true
+          explanation: "<Why correct.>"
+        - content: "<Option B>"
+          isCorrect: false
+          explanation: "<Why incorrect.>"
+        - content: "<Option C>"
+          isCorrect: false
+          explanation: "<Why incorrect.>"
+    - content: "<Question 3?>"
+      choices:
+        - content: "<Option A>"
+          isCorrect: false
+          explanation: "<Why incorrect.>"
+        - content: "<Option B>"
+          isCorrect: false
+          explanation: "<Why incorrect.>"
+        - content: "<Option C>"
+          isCorrect: true
+          explanation: "<Why correct.>"
