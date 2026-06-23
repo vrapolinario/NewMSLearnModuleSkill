@@ -9,7 +9,6 @@ metadata:
   ms.author: <author-microsoft-alias>
   ms.topic: module
   ms.custom: team=<team-name>            # optional, e.g. team=cloud_advocates
-  ms.service: <product-or-service-slug>
 title: <Visible module title>
 summary: <1-3 sentence catalog summary of the module.>
 abstract: |

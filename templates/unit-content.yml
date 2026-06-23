@@ -8,7 +8,6 @@ metadata:
   author: <author-github-alias>
   ms.author: <author-microsoft-alias>
   ms.topic: unit
-  ms.service: <product-or-service-slug>
 durationInMinutes: <integer>
 content: |
   [!include[](includes/<n>-<unit-slug>.md)]
